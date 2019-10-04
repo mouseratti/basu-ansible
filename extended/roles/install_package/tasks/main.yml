@@ -1,0 +1,9 @@
+# - name: apt-update
+#   apt:
+#     update_cache: yes
+
+- name: install packages
+  apt:
+    package: "{{item}}"
+    # package: "{{packages}}"
+  with_items: "{{packages}}"

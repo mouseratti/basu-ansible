@@ -1,0 +1,41 @@
+- name: simple playbook
+  hosts: localhost
+  # gather_facts: no
+  connection: local
+  vars:
+    var1: value1
+  tasks:
+    # - name: include_vars 
+    #   include_vars:
+    #     dir: vars
+
+    - name: debug ansible variables
+      debug:
+        msg: "these are facts {{ansible_facts}}"
+
+    - name: debug user variables
+      debug:
+        msg: |
+          this is debug! 
+          var1: {{var1 | to_nice_yaml}} 
+          var2: {{var2 | default('default value for var2') | to_nice_json}}
+        # var3: {{var3 | mandatory}}
+
+
+    # - name: run command
+    #   command: cat /etc/motd
+    #   register: mymotd
+
+    # - name: debug motd
+    #   debug:
+    #     msg: "{{mymotd}}"
+
+    # - name: set_fact
+    #   set_fact:
+    #     my_fact: "some value"
+
+
+    # - name: debug set_fact
+    #   debug:
+    #     msg: "{{my_fact}}"
+

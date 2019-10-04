@@ -1,0 +1,12 @@
+# https://docs.ansible.com/ansible/latest/modules
+- name: extended
+  hosts: all
+  gather_facts: no
+  connection: local
+  # become: true
+  roles:
+    - create_file
+    # - install_package
+    # - add_some_user
+
+

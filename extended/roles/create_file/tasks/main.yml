@@ -1,0 +1,27 @@
+- name: create file debug
+  # Читать значения можно через обе нотации!
+  debug:
+    msg: "{{role_path|basename}} {{dict1['key1']}} {{dict1.key1}}" 
+
+# - name: create file {{filename}}
+#   file:
+#     path: /tmp/{{filename}}
+#     mode: '0755'
+#     state: touch
+
+# - name: copy file from role to dest
+#   copy:
+#     src: file.bin
+#     dest: /tmp/file.bin
+
+# # - name: create directory
+# #   file:
+# #     path: "{{dirname}}"
+# #     mode: '0755'
+# #     state: directory
+# - name: create file from template
+#   template:
+#     src: template1.txt
+#     dest: "{{dirname}}/file1.txt"
+#     mode: 0644
+#   when: dirname is defined

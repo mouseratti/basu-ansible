@@ -1,0 +1,6 @@
+#https://docs.exponea.com/docs/jinja-syntax
+# http://jinja.quantprogramming.com/
+{{var1}}
+{%for item in var2%}
+{{item}}
+{% endfor %}
