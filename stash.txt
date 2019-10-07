@@ -2,5 +2,4 @@ https://www.osboxes.org/ubuntu/#ubuntu-19-10-info
 ansible ALL=NOPASSWD: ALL
 deb http://mirror.yandex.ru/ubuntu eoan main restricted multiverse universe
 
-check mode
-https://docs.ansible.com/ansible/latest/user_guide/playbooks_checkmode.html
+ansible-galaxy install nginxinc.nginx --roles-path extended/roles/

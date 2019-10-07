@@ -1,0 +1,19 @@
+# - name: main playbook
+#   hosts: db, vms
+#   # become: true
+#   roles:
+#     - mysql_install
+
+
+- name: build
+  hosts: localhost
+  connection: local
+  roles:
+    - build
+
+
+- name: deploy
+  hosts: vm
+  roles:
+    - deploy
+

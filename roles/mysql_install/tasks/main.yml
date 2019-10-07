@@ -1,0 +1,25 @@
+- name: debug
+  debug:
+    msg: runnin mysql_install {{var1}}
+
+- name: install package
+  apt:
+    package: mysql-server
+
+- name: install python dependencies
+  pip:
+    name: pymysql
+
+- name: Create mysql user
+  mysql_user:
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    name: '{{ansible_user}}'
+    password: '{{ansible_password}}'
+    priv: '*.*:ALL'
+    state: present
+
+
+- name: Create db
+  mysql_db:
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    name: '{{ansible_user}}'

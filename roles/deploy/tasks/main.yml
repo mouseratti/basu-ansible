@@ -1,0 +1,4 @@
+- name: deploy artifact
+  copy:
+    src: /tmp/artifact.zip
+    dest: /tmp/artifact.zip
