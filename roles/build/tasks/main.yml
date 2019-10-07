@@ -1,0 +1,2 @@
+- name: build
+  shell: "echo {{inventory_hostname}} > /tmp/artifact.zip"
