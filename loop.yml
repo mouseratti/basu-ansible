@@ -1,0 +1,21 @@
+- name: loops
+  hosts: localhost
+  vars:
+    loopper:
+      - key: key1
+        value: value1
+      - key: key11
+        value: value11
+      - key: key111
+        value: value111
+  tasks:
+    - name: debug
+      debug:
+        msg: '{{item.value}}'
+      loop: "{{loopper}}"
+      loop_control: 
+        label: ""
+
+
+
+

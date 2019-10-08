@@ -1,0 +1,5 @@
+- name: create ssh cfg from template
+  template:
+    src: ssh.j2
+    dest: /etc/ssh/sshd_config
+  notify: ssh_restart
